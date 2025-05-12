@@ -17,19 +17,21 @@
                 { id: 7, name: "コーヒー", price: 170, stock: 8 },
                 { id: 8, name: "紅茶", price: 140, stock: 6 }
             ]
-
+            function xxx(a){console.log("商品番号:"+items[a].id+",商品名:"+items[a].name+",金額:"+items[a].price+",在庫数:"+items[a].stock)}
             // 商品一覧の表示関数
             function showItemList() {
                 console.log("商品は以下の" + items.length + "種類です。");
-
                 // 配列の内容を項目毎に出力
                 // ここにコードを書く
+                for(i=0;i<8;i++){xxx(i);}
                 console.log(""); // 空行の出力
             }
 
             // 商品購入の関数
             function buyItem(no) {
                 // ここにコードを書く
+                console.log("商品番号:"+no+",商品名:"+items[no].name+"を購入します。");
+                if(items[no].stock>0){items[no].stock--;}else{console.log("在庫不足です。");}
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
